@@ -1,5 +1,5 @@
 class TicTacToe:
-    size = 5
+    size = 3
 
     def __init__(self):
         self.board = [" " for _ in range(TicTacToe.size ** 2)]
@@ -15,6 +15,7 @@ class TicTacToe:
         for row in [number_board[i * TicTacToe.size:(i + 1) * TicTacToe.size] for i in range(TicTacToe.size)]:
             row = [" " + cell + " " if len(cell) < 2 else " " + cell for cell in row]
             print("| " + " | ".join(row) + " |")
+        print("")
 
     def available_moves(self):
         return [i for i, spot in enumerate(self.board) if spot == " "]
